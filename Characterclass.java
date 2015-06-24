@@ -9,9 +9,11 @@
 package testpro;
 
 import javax.*;
+
 import java.awt.*;
 import java.io.*;
 import java.util.*;
+
 import javax.swing.*;
 
 
@@ -43,14 +45,14 @@ public class Characterclass
 	}
 
 	//This Array is the map of this game
-	static ourMap u_map[][] = new ourMap[16][16];
+	static ourMap u_map[][] = new ourMap[65][65];
 
 	//This function makes the map into LAND
 	public void map_init()
 	{
-		for (int first_Index = 0; first_Index < 15; first_Index++)
+		for (int first_Index = 0; first_Index < 65; first_Index++)
 		{
-			for (int second_Index = 0; second_Index < 15; second_Index++)
+			for (int second_Index = 0; second_Index < 65; second_Index++)
 			{
 				u_map[first_Index][second_Index] = ourMap.LAND;
 			}
@@ -65,14 +67,14 @@ public class Characterclass
 		int hp = 10;
 		int dir_x;
 		int dir_y;
-		ourMap my_map[][] = new ourMap[16][16];
+		ourMap my_map[][] = new ourMap[65][65];
 
 		//This function makes the character's map into LAND
 		public void map_Init() 
 		{
-			for (int fist_Index = 0; fist_Index < 15; fist_Index++) 
+			for (int fist_Index = 0; fist_Index < 65; fist_Index++) 
 			{
-				for (int second_Index = 0; second_Index < 15; second_Index++) 
+				for (int second_Index = 0; second_Index < 65; second_Index++) 
 				{
 					my_map[fist_Index][second_Index] = ourMap.LAND;
 				}
@@ -84,6 +86,8 @@ public class Characterclass
 		public Character(int x, int y, String name)
 		{
 			this.name = name;
+			u_map[x][y]=ourMap.MY_ANT;
+			my_map[x][y]=ourMap.MY_ANT;
 			dir_x = x;
 			dir_y = y;
 			map_Init();
@@ -95,7 +99,7 @@ public class Characterclass
 			switch (dir)
 			{
 			case UP: // character moves up
-				if (dir_y == 0) //direction is not ok. (over range) 
+				if (dir_y <2) //direction is not ok. (over range) 
 				{
 
 				}
@@ -115,7 +119,7 @@ public class Characterclass
 				}
 				break;
 			case LEFT: // character moves left
-				if (dir_x < 1) //direction is not ok. (over range)
+				if (dir_x < 2) //direction is not ok. (over range)
 				{
 
 				}
@@ -133,7 +137,7 @@ public class Characterclass
 				}
 				break;
 			case RIGHT: // character moves right
-				if (dir_x >= 14)//direction is not ok. (over range)
+				if (dir_x > 62)//direction is not ok. (over range)
 				{
 
 				} 
@@ -152,7 +156,7 @@ public class Characterclass
 				}
 				break;
 			case DOWN: // character moves down. (over range)
-				if (dir_y > 13) 
+				if (dir_y > 62) 
 				{
 
 				} 
@@ -178,24 +182,24 @@ public class Characterclass
 		{
 			if (u_map[dir_x][dir_y - 1] != my_map[dir_x][dir_y - 1]) 
 			{
-				System.out.println("up");
+				System.out.println("출력1");
 				return true;
 			}
 			else if (u_map[dir_x][dir_y + 1] != my_map[dir_x][dir_y + 1])
 			{
-				System.out.println("down");
+				System.out.println("출력2");
 
 				return true;
 			}
 			else if (u_map[dir_x - 1][dir_y] != my_map[dir_x - 1][dir_y])
 			{
-				System.out.println("left");
+				System.out.println("출력3");
 
 				return true;
 			} 
 			else if (u_map[dir_x + 1][dir_y] != my_map[dir_x + 1][dir_y])
 			{
-				System.out.println("right");
+				System.out.println("출력4");
 
 				return true;
 			}
@@ -229,7 +233,7 @@ public class Characterclass
 			{
 				defender.hp--;
 			}
-
+			System.out.println("player1 hp : " + player1.hp + "player2 hp : " + player2.hp);
 			if (defender.hp <= 0) 
 			{
 				System.out.println(attacker.name);
@@ -239,7 +243,7 @@ public class Characterclass
 		}
 	}
 
-	Character player1 = new Character(1, 14, "Player1");
+	Character player1 = new Character(63, 63, "Player1");
 	Character player2 = new Character(1, 1, "Player2");
 
 }
