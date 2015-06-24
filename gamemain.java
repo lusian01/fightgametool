@@ -18,14 +18,17 @@ import testpro.Characterclass.moveDir;
 import testpro.Characterclass.ourMap;
 
 //This class is the ui of this fighting game
-public class gamemain extends JFrame {
+public class gamemain extends JFrame 
+{
 	static Characterclass character_c = new Characterclass();
 
 	//This constructructor make the thread of players and make the dialog
-	public gamemain() {
-
+	public gamemain() 
+	{
 		super("Game Dialog");
+		
 		character_c.map_init();
+		
 		setBounds(100, 100, 500, 500);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -44,11 +47,15 @@ public class gamemain extends JFrame {
 		player1.start();
 		player2.start();
 
-		while (true) {
+		while (true)
+		{
 			repaint();
-			try {
+			try 
+			{
 				Thread.sleep(100);
-			} catch (InterruptedException e) {
+			} 
+			catch (InterruptedException e) 
+			{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
@@ -58,16 +65,20 @@ public class gamemain extends JFrame {
 	}
 
 	//main of this project
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		new gamemain();
 	}
 
 	//painting players who are located in this game
-	public void paint(Graphics g) {
+	public void paint(Graphics g) 
+	{
 		g.clearRect(0, 0, 500, 500);
+		
 		g.setColor(Color.red);
 		g.drawOval((character_c.player1.dir_x + 4) * 10,
 				(character_c.player1.dir_y + 4) * 10, 20, 20); // draw the circle
+		
 		g.setColor(Color.blue);
 		g.drawOval((character_c.player2.dir_x + 4) * 10,
 				(character_c.player2.dir_y + 4) * 10, 20, 20); // draw the circle
