@@ -29,7 +29,7 @@ public class gamemain extends JFrame
 		
 		character_c.map_init();
 		
-		setBounds(100, 100, 500, 500);
+		setBounds(100, 100, 800, 800);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		Container contentPane = this.getContentPane();
@@ -73,7 +73,7 @@ public class gamemain extends JFrame
 	//painting players who are located in this game
 	public void paint(Graphics g) 
 	{
-		g.clearRect(0, 0, 500, 500);
+		g.clearRect(0, 0, 800, 800);
 		
 		g.setColor(Color.red);
 		g.drawOval((character_c.player1.dir_x + 4) * 10,
