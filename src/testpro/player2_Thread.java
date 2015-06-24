@@ -25,24 +25,24 @@ public class player2_Thread extends Thread {
 				int x_Distance=gamemain.character_c.player2.dir_x - gamemain.character_c.player1.dir_x;
 				int y_Distance=gamemain.character_c.player2.dir_y - gamemain.character_c.player1.dir_y;
 				
-				if(x_Distance < 0)
-				{
-					gamemain.character_c.player2.moveChar(moveDir.RIGHT);
-				}
-				else if(x_Distance > 0)
-				{
-					gamemain.character_c.player2.moveChar(moveDir.LEFT);
-				}
+			
+					if(x_Distance < 2)
+					{
+						gamemain.character_c.player2.moveChar(moveDir.RIGHT);
+					}
+					else if(x_Distance > 2)
+					{
+						gamemain.character_c.player2.moveChar(moveDir.LEFT);
+					}
 				
-				else if(y_Distance<0)
-				{
-					gamemain.character_c.player2.moveChar(moveDir.DOWN);
-				}
-				else
-				{
-					gamemain.character_c.player2.moveChar(moveDir.UP);	
-				}
-		
+					else if(y_Distance < 2)
+					{
+						gamemain.character_c.player2.moveChar(moveDir.DOWN);
+					}
+					else
+					{
+						gamemain.character_c.player2.moveChar(moveDir.UP);	
+					}
 			}
 			
 			//---------------------end the algorithm of player2's move-------------------------//

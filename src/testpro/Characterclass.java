@@ -20,8 +20,8 @@ import javax.swing.*;
 //This class is used for characters of this fighting game
 public class Characterclass 
 {
-	static int x_direction=65;
-	static int y_direction=65;
+	static int x_direction=64;
+	static int y_direction=64;
 	
 	// this enum shows the player's locate variable.
 	public enum ourMap 

@@ -42,9 +42,18 @@ public class gamemain extends JFrame
 		Thread player2 = new player2_Thread();
 
 		//using threads
-		player2.start();
-		player1.start();
-
+		
+		if((int) (Math.random() * 2)==0)
+		{
+			player1.start();
+			player2.start();
+		}
+		else
+		{
+			player2.start();
+			player1.start();
+			
+		}
 
 		while (true)
 		{

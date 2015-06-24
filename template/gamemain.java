@@ -12,10 +12,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
 
-import javax.swing.*;
-
-import testpro.Characterclass.moveDir;
-import testpro.Characterclass.ourMap;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 //This class is the ui of this fighting game
 public class gamemain extends JFrame 
@@ -44,8 +42,18 @@ public class gamemain extends JFrame
 		Thread player2 = new player2_Thread();
 
 		//using threads
-		player1.start();
-		player2.start();
+		
+		if((int) (Math.random() * 2)==0)
+		{
+			player1.start();
+			player2.start();
+		}
+		else
+		{
+			player2.start();
+			player1.start();
+			
+		}
 
 		while (true)
 		{
