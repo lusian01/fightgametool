@@ -12,10 +12,8 @@ import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
 
-import javax.swing.*;
-
-import testpro.Characterclass.moveDir;
-import testpro.Characterclass.ourMap;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 //This class is the ui of this fighting game
 public class gamemain extends JFrame 
