@@ -7,7 +7,7 @@
 **gamemain.java** 이 메인 java 파일이며, gameamain.java 를 통해 player를 생성합니다.
 <br><pre>make frame;
 </pre>
-**charaterclass.java** is a character java file. characterclass.java is make player, map. 
+**charaterclass.java** 은 캐릭터 자바 파일입니다.player와 map을 생성합니다.
 <pre>
 ourMap my_map[][] = new ourMap[16][16];
 Character player1 = new Character(1, 14, "Player1");
