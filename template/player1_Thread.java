@@ -17,29 +17,7 @@ public class player1_Thread extends Thread {
 
 			//---------------------Start the algorithm of player1's move-------------------------//
 			
-			if (gamemain.character_c.player1.searchEnemy()) {
-				gamemain.character_c.attackEnemy(gamemain.character_c.player1,
-						gamemain.character_c.player2);
-
-			}
 		
-			      int n = (int) (Math.random() * 4);
-			      switch(n)
-			      {
-			      case 0:
-						gamemain.character_c.player1.moveChar(moveDir.UP);
-			    	  break;
-			      case 1:
-						gamemain.character_c.player1.moveChar(moveDir.DOWN);
-			    	  break;
-			      case 2:
-						gamemain.character_c.player1.moveChar(moveDir.LEFT);
-			    	  break;
-			      case 3:
-						gamemain.character_c.player1.moveChar(moveDir.RIGHT);
-			    	  break;
-			      }
-			
 			
 			//---------------------end the algorithm of player1's move-------------------------//
 			
