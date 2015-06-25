@@ -198,7 +198,7 @@ public class Characterclass
 	}
 
 	//This function can be used attack the enemy who locate near player.
-	public void attackEnemy(Character attacker, Character defender)
+	synchronized public void attackEnemy(Character attacker, Character defender)
 	{
 		if (defender.hp > 0)
 		{
@@ -219,14 +219,14 @@ public class Characterclass
 				defender.hp--;
 			}
 			System.out.println("player1 hp : " + player1.hp + " player2 hp : " + player2.hp);
-			
-			if (defender.hp <= 0) 
+		}
+			if (defender.hp == 0) 
 			{
 				System.out.println(attacker.name);
 				System.out.println("Finish");
 				System.exit(0);
 			}
-		}
+		
 	}
 
 	Character player1 = new Character((int) (Math.random() * (x_direction-2))+1, (int) (Math.random() * (y_direction-2))+1, "Player1");
