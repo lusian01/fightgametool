@@ -20,8 +20,8 @@ import javax.swing.*;
 //This class is used for characters of this fighting game
 public class Characterclass 
 {
-	static int x_direction=64;
-	static int y_direction=64;
+	static int x_direction=8;
+	static int y_direction=8;
 	
 	// this enum shows the player's locate variable.
 	public enum ourMap 
@@ -183,30 +183,16 @@ public class Characterclass
 		//This function search the other player who is the player's enemy
 		public boolean searchEnemy() 
 		{
-			if (u_map[dir_x][dir_y - 1] != my_map[dir_x][dir_y - 1]) 
-			{	
-				return true;
-			}
-			else if (u_map[dir_x][dir_y + 1] != my_map[dir_x][dir_y + 1])
+			if (u_map[dir_x][dir_y - 1] != my_map[dir_x][dir_y - 1] ||
+				u_map[dir_x][dir_y + 1] != my_map[dir_x][dir_y + 1] ||
+				u_map[dir_x - 1][dir_y] != my_map[dir_x - 1][dir_y] ||
+				u_map[dir_x + 1][dir_y] != my_map[dir_x + 1][dir_y])
 			{
-			
-				return true;
-			}
-			else if (u_map[dir_x - 1][dir_y] != my_map[dir_x - 1][dir_y])
-			{
-			
-				return true;
-			} 
-			else if (u_map[dir_x + 1][dir_y] != my_map[dir_x + 1][dir_y])
-			{
-			
-				return true;
-			}
-			else
-			{
-				return false;
-			}
 
+				return true;
+			}
+			
+				return false;
 		}
 
 	}
@@ -233,6 +219,7 @@ public class Characterclass
 				defender.hp--;
 			}
 			System.out.println("player1 hp : " + player1.hp + " player2 hp : " + player2.hp);
+			
 			if (defender.hp <= 0) 
 			{
 				System.out.println(attacker.name);
