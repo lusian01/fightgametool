@@ -1,6 +1,11 @@
 # Library for Game Algorithms Check  
 
-안녕하세요, 이 라이브러리는 대전 게임 알고리즘을 확인 하기 위해 만들어 졌습니다.
+안녕하세요, 이 라이브러리는 대전 게임 알고리즘을 확인 하기 위해 만들어 졌습니다.<br>
+(포함된 파일 : Characterclass.java<br>
+gamemain.java<br>
+player1_Thread.java<br>
+player2_Thread.java)<br>
+사용자는 player1_Thread.java와 player2_Thread.java를 이용하여 각 player 의 행동을 입력합니다.
 
 ## Game Alogrithms Check
 
