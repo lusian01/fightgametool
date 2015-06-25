@@ -14,7 +14,7 @@ player2_Thread.java)<br>
 </pre>
 **charaterclass.java** 은 캐릭터 자바 파일입니다.player와 map을 생성합니다.
 <pre>
-ourMap my_map[][] = new ourMap[16][16];
+ourMap my_map[][] = new ourMap[65][65];
 Character player1 = new Character(1, 14, "Player1");
 Character player2 = new Character(1, 1, "Player2");
 </pre>
